@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    {% load static %}
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Restaurant</title>
+
+	<!-- Normalize V8.0.1 -->
+	<link rel="stylesheet" href="./css/normalize.css">
+
+	<!-- MDBootstrap V5 -->
+	<link rel="stylesheet" href="./css/mdb.min.css">
+
+	<!-- Font Awesome V5.15.1 -->
+	<link rel="stylesheet" href="./css/all.css">
+
+	<!-- Sweet Alert V10.13.0 -->
+	<script src="./js/sweetalert2.js" ></script>
+
+	<!-- General Styles -->
+	<link rel="stylesheet" href="{% static 'css/style.css' %} ">
+
+</head>
+<body>
+    <header class="header full-box"></header>
+	    <div class="header-options full-box">
+	        <nav class="header-navbar full-box poppins-regular font-weight-bold">
+	            <ul class="list-unstyled full-box">
+	                <li>
+	                    <a href="#!">Inicio<span class="full-box"></span></a>
+	                    <a href="{% url 'platos' %}">Platos<span class="full-box"></span></a>
+                        <a href="#!">Clientes<span class="full-box"></span></a>
+                        <a href="#!">Empleados<span class="full-box"></span></a>
+                        <a href="#singup">Iniciar Sesion<span class="full-box"></span></a>
+	                </li>
+	            </ul>
+	        </nav>
+	    </div>
+	</header>
+	
+	<!-- Content -->
+	<div class="banner">
+	    <div class="banner-body">
+	        <h3 class="text-uppercase">Bienvenido al Restaurante Proyecto Coder</h3>
+	        <p>Los mejores platillos y la mejor calidad los encuentras en Restaurante Proyecto Coder</p>
+	        
+	    </div>
+	</div>
+
+	
+
+</body>
+</html>

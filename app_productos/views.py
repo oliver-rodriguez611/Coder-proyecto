@@ -18,3 +18,19 @@ def lista_platos(req):
     lista = Plato.objects.all()
 
     return render(req, "lista_platos.html", {"lista_platos": lista})
+
+def inicio(req):
+
+    return render(req,"inicio.html", {})
+
+def platos(req):
+
+    return render(req,"platos.html", {})
+
+def clientes(req):
+
+    return render(req,"clientes.html", {})
+
+def empleados(req):
+
+    return render(req,"empleados.html", {})
