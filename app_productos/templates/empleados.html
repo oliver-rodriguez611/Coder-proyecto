@@ -1,13 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>empleados</title>
-</head>
-<body style = "background-color: yellowgreen;">
+{% extends 'padre.html' %}
 
-    <h1> Vista empleados</h1>
+
+{% block contenidoQueCambia %}
+	
+    <h1>Lista de Talento Humano:</h1>
     
-</body>
-</html>
+    <ul>
+        <li>Oliver Rodriguez</li>
+        <li>Thara Sofia</li>
+        <li>Catalina Espinosa</li>
+    </ul>
+
+{% endblock contenidoQueCambia %}

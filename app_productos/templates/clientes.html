@@ -1,13 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>clientes/</title>
-</head>
-<body style = "background-color: purple;">
+{% extends 'padre.html' %}
 
-    <h1> Vista clientes</h1>
+
+{% block contenidoQueCambia %}
+	
+    <h1>Clientes Frecuentes:</h1>
     
-</body>
-</html>
+    <ul>
+        <li>Camilo Ortis</li>
+        <li>jaime Rodriguez</li>
+        <li>camila Esteban</li>
+    </ul>
+
+{% endblock contenidoQueCambia %}

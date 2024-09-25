@@ -1,13 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>platos</title>
-</head>
-<body style = "background-color: blue;">
+{% extends 'padre.html' %}
 
-    <h1> Vista platos</h1>
+
+{% block contenidoQueCambia %}
+	
+    <h1>Los platos que tenemos en el menu son:</h1>
     
-</body>
-</html>
+    <ul>
+        <li>Pasta con Carne</li>
+        <li>Carne en Bisteck</li>
+        <li>Hamburguesa Doble Carne</li>
+    </ul>
+
+{% endblock contenidoQueCambia %}
