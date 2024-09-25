@@ -7,7 +7,7 @@ class Plato(models.Model):
     precio = models.IntegerField()
 
     def __str__(self):
-        return f'{self.nombre} - {self.precio}'
+        return f'{self.nombre}'
 
     class Meta():
 
@@ -39,7 +39,7 @@ class empleados(models.Model):
     cargo = models.CharField(max_length=50, null = True)
 
     def __str__(self):
-        return f'{self.nombre} - {self.apellido}'
+        return f'{self.nombre} - {self.apellido} - {self.identificacion}'
     
     class Meta():
 
