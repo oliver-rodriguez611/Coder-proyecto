@@ -35,7 +35,7 @@ como tercer entrega aun se encuentra en construccion.
 
 ## Paso a Paso
 
-- levantar servidor ingresando en terminal python manage.py runserver
+- levantar servidor local ingresando en terminal -- "python manage.py runserver"
 - ingresar al puerto indicado en la terminal
 
 Para consultar informacion disponible, ingresar los siguiente link:
