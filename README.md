@@ -35,6 +35,9 @@ como tercer entrega aun se encuentra en construccion.
 
 ## Paso a Paso
 
+- levantar servidor ingresando en terminal python manage.py runserver
+- ingresar al puerto indicado en la terminal
+
 Para consultar informacion disponible, ingresar los siguiente link:
 
 - Para el inicio de la pagina, ingresar al link: LocalHost/app_productos/
