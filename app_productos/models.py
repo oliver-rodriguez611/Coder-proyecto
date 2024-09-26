@@ -30,7 +30,7 @@ class clientes(models.Model):
 
 
 
-#profesor en el video
+
 class empleados(models.Model):
     nombre = models.CharField(max_length=50)
     apellido = models.CharField(max_length=50)

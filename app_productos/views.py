@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import *
-from .forms import PlatosFormulario
+from .forms import *
 
 # Create your views here.
 
@@ -28,7 +28,7 @@ def platos(req):
 
     return render(req,"platos.html", {})
 
-def clientes(req):
+def Clientes(req):
 
     return render(req,"clientes.html", {})
 
@@ -63,16 +63,78 @@ def platos_formulario(req):
         return render(req,"platos_formulario.html", {"mi_formulario": mi_formulario})
     
 
+def clientes_formulario(req):
+
+    print('methos', req.method)
+    print('data', req.POST)
+
+    if req.method == 'POST':
+
+        mi_formulario_clientes = ClientesFormulario(req.POST)
+
+        if mi_formulario_clientes.is_valid():
+
+            data = mi_formulario_clientes.cleaned_data
+
+            nuevo_cliente= clientes(nombre = data["nombre"], apellido = data["apellido"], email = data["email"])
+            nuevo_cliente.save()
+
+            return render(req,"inicio.html", {})
+
+        else:
+            return render(req,"clientes_formulario.html", {"mi_formulario_clientes": mi_formulario_clientes})
+
+    else:
+
+        mi_formulario_clientes = ClientesFormulario()
+        return render(req,"clientes_formulario.html", {"mi_formulario_clientes": mi_formulario_clientes})
+    
+
+
+def empleados_formulario(req):
+
+    print('methos', req.method)
+    print('data', req.POST)
+
+    if req.method == 'POST':
+
+        mi_formulario_empleados = EmpleadosFormulario(req.POST)
+
+        if mi_formulario_empleados.is_valid():
+
+            data = mi_formulario_empleados.cleaned_data
+
+            nuevo_empleados= empleados(nombre = data["nombre"], apellido = data["apellido"], identificacion =data["identificacion"], email = data["email"], cargo = data["cargo"])
+            nuevo_empleados.save()
+
+            return render(req,"inicio.html", {})
+
+        else:
+            return render(req,"empleados_formulario.html", {"mi_formulario_empleados": mi_formulario_empleados})
+
+    else:
+
+        mi_formulario_empleados = EmpleadosFormulario()
+        return render(req,"empledos_formulario.html", {"mi_formulario_empleados": mi_formulario_empleados})
+
+
+
+
+    
+
 def busqueda_plato(req):
     
     return render(req, "busqueda_plato.html")
 
 def buscar_plato(req):
 
-    nom_plato = req.GET["nombre"]
+    nom_plato = req.GET.get("nombre")
 
-    plato = Plato.objects.get(nombre = nom_plato)
-    
+    platos = Plato.objects.all()
 
-    return render(req,"resultado_busqueda_plato.html", {"plato": plato, "nombre": nom_plato})
+    if nom_plato:
+        platos = platos.filter(nombre__icontains=nom_plato)
+   
+
+    return render(req,"resultado_busqueda_plato.html", {"platos": platos, "nombre": nom_plato})
 
